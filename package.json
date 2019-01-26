@@ -1,0 +1,30 @@
+{
+  "name": "oglavic-synergize-landing",
+  "version": "1.0.0",
+  "description": "ConUHacks IV",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/bazoo/oglavic-synergize-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/bazoo/oglavic-synergize-landing/issues"
+  },
+  "homepage": "https://gitlab.com/bazoo/oglavic-synergize-landing#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "styled-components": "^4.1.3",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1",
+    "react-landing-page": "^2.0.2"
+  }
+}
