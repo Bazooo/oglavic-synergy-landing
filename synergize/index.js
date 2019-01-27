@@ -7,6 +7,7 @@ import Cup from "./pointsOfInterest/Cup";
 import Bicycle from "./pointsOfInterest/Bicycle";
 import Sink from "./pointsOfInterest/Sink";
 import Fridge from "./pointsOfInterest/Fridge";
+import Man from "./pointsOfInterest/Man";
 
 export default class Synergize extends React.Component {
   render() {
@@ -22,3 +23,4 @@ AppRegistry.registerComponent("cup", () => Cup);
 AppRegistry.registerComponent("bicycle", () => Bicycle);
 AppRegistry.registerComponent("sink", () => Sink);
 AppRegistry.registerComponent("fridge", () => Fridge);
+AppRegistry.registerComponent("man", () => Man);
