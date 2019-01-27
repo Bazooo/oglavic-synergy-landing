@@ -7,9 +7,11 @@ import Bicycle from "./pointsOfInterest/Bicycle";
 import Sink from "./pointsOfInterest/Sink";
 import Fridge from "./pointsOfInterest/Fridge";
 import Man from "./pointsOfInterest/Man";
-import Picture from './pointsOfInterest/Picture';
-import Counter from './pointsOfInterest/Counter';
-import PaperTowel from './pointsOfInterest/PaperTowel';
+import Picture from "./pointsOfInterest/Picture";
+import Counter from "./pointsOfInterest/Counter";
+import PaperTowel from "./pointsOfInterest/PaperTowel";
+import Filter from "./pointsOfInterest/Filter";
+import Light from "./pointsOfInterest/Light";
 
 export default class Synergize extends React.Component {
   render() {
@@ -26,7 +28,8 @@ AppRegistry.registerComponent("bicycle", () => Bicycle);
 AppRegistry.registerComponent("sink", () => Sink);
 AppRegistry.registerComponent("fridge", () => Fridge);
 AppRegistry.registerComponent("man", () => Man);
-
-AppRegistry.registerComponent('paperTowel', () => PaperTowel);
-AppRegistry.registerComponent('counter', () => Counter);
-AppRegistry.registerComponent('picture', () => Picture);
+AppRegistry.registerComponent("filter", () => Filter);
+AppRegistry.registerComponent("paperTowel", () => PaperTowel);
+AppRegistry.registerComponent("counter", () => Counter);
+AppRegistry.registerComponent("picture", () => Picture);
+AppRegistry.registerComponent("light", () => Light);
