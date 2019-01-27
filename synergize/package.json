@@ -15,6 +15,7 @@
     "react-360-gaze-button": "^1.0.0",
     "react-360-web": "~1.0.0",
     "react-native": "~0.49.5",
+    "simple-raycaster": "^1.1.0",
     "three": "^0.87.0"
   },
   "devDependencies": {

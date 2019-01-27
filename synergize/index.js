@@ -7,6 +7,7 @@ import {
   VrButton
 } from 'react-360';
 import GazeButton from 'react-360-gaze-button';
+import Crosshair from './entities/Crosshair';
 
 export default class synergize extends React.Component {
   state = {
@@ -17,6 +18,7 @@ export default class synergize extends React.Component {
     this.setState({ gazed: true });
   };
   render() {
+    const { gazed } = this.state;
     return (
       <View style={styles.panel}>
         <GazeButton
@@ -44,7 +46,6 @@ const styles = StyleSheet.create({
     // Fill the entire surface
     width: 1000,
     height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -60,3 +61,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('synergize', () => synergize);
+AppRegistry.registerComponent('crosshair', () => Crosshair);
