@@ -28,6 +28,33 @@ function init(bundle, parent, options = {}) {
   fridgeSurface.setAngle((22.2 * Math.PI) / 32, (0 * Math.PI) / 16);
   manSurface.setAngle((-0.9 * Math.PI) / 32, (4 * Math.PI) / 16);
 
+  const paperTowelSurface = new Surface(
+    1000, 600, Surface.SurfaceShape.Flat
+  );
+
+  paperTowelSurface.setAngle(
+    12 * Math.PI / 32,
+    1 * Math.PI / 32,
+  );
+
+  const counterSurface = new Surface(
+    1000, 600, Surface.SurfaceShape.Flat
+  );
+
+  counterSurface.setAngle(
+    0 * Math.PI / 32,
+    -3 * Math.PI / 8,
+  );
+
+  const pictureSurface = new Surface(
+    1000, 600, Surface.SurfaceShape.Flat
+  );
+
+  pictureSurface.setAngle(
+    -95 * Math.PI / 100,
+    1.5 * Math.PI / 10,
+  );
+
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
@@ -58,14 +85,25 @@ function init(bundle, parent, options = {}) {
   r360.renderToSurface(r360.createRoot("fridge"), fridgeSurface);
   r360.renderToSurface(r360.createRoot("man"), manSurface);
 
-  r360.renderToSurface(r360.createRoot("crosshair"), crosshair);
-
-  r360.renderToLocation(
-    r360.createRoot("barista"),
-    new Location([100, 0, -20])
+  r360.renderToSurface(
+    r360.createRoot('paperTowel'),
+    paperTowelSurface
   );
 
-  r360.renderToLocation(r360.createRoot("cup"), new Location([0, 0, 0]));
+  r360.renderToSurface(
+    r360.createRoot('counter'),
+    counterSurface
+  );
+
+  r360.renderToSurface(
+    r360.createRoot('picture'),
+    pictureSurface
+  );
+
+  r360.renderToSurface(
+    r360.createRoot('crosshair'),
+    crosshair
+  );
 
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL("coffee.jpg"));

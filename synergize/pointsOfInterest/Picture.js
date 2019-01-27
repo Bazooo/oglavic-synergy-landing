@@ -6,13 +6,13 @@ import {
   View,
 } from 'react-360';
 
-export default class Kettle extends React.Component {
+export default class Picture extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
         <View style={styles.greetingBox}>
           <Text style={styles.greeting}>
-            Boiling water : Eau bouillante
+            Picture : Image
           </Text>
         </View>
       </View>
