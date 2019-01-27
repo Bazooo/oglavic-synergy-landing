@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   crosshair: {
+    borderColor: '#333333',
     backgroundColor: '#ffffff',
     width: radius,
     height: radius,

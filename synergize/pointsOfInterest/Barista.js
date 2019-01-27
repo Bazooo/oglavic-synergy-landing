@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  VrButton
-} from 'react-360';
+import { StyleSheet, Text, View } from 'react-360';
 import GazeButton from 'react-360-gaze-button';
-import Crosshair from './entities/Crosshair';
-import Barista from './pointsOfInterest/Barista';
 
-export default class Synergize extends React.Component {
+export default class Barista extends React.Component {
   state = {
     gazed: false
   };
@@ -18,10 +10,12 @@ export default class Synergize extends React.Component {
   setGazed = () => {
     this.setState({ gazed: true });
   };
+
   render() {
     const { gazed } = this.state;
+
     return (
-      <View style={styles.panel}>
+      <View style={styles.location}>
         <GazeButton
           duration={250}
           onClick={this.setGazed}
@@ -29,10 +23,10 @@ export default class Synergize extends React.Component {
             <View style={styles.greetingBox}>
               <Text style={styles.greeting}>
                 {gazed
-                  ? "You have gazed me"
+                  ? "Paper towels"
                   : isGazed
                     ? remainingTime
-                    : "Gaze me"}
+                    : "Essuie-tout"}
               </Text>
             </View>
           )}
@@ -40,30 +34,23 @@ export default class Synergize extends React.Component {
       </View>
     );
   }
-};
+}
 
 const styles = StyleSheet.create({
-  panel: {
-    // Fill the entire surface
-    width: 1000,
-    height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    justifyContent: 'center',
-    alignItems: 'center',
+  location: {
+    height: 20,
+    transform: [{
+      // translate: [20, 10, -1],
+      rotateY: -90
+    }]
   },
   greetingBox: {
     backgroundColor: '#ecf0f1',
     borderRadius: 15,
-    padding: 5,
-    width: 300
+    padding: 5
   },
   greeting: {
-    textAlign: 'center',
     color: '#333333',
-    fontSize: 30,
+    fontSize: 15,
   },
 });
-
-AppRegistry.registerComponent('synergize', () => Synergize);
-AppRegistry.registerComponent('crosshair', () => Crosshair);
-AppRegistry.registerComponent('barista', () => Barista);

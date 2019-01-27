@@ -1,7 +1,7 @@
 // This file contains the boilerplate to execute your React app.
 // If you want to modify your application's content, start in "index.js"
 
-import {Math as VRMath, ReactInstance, Surface} from 'react-360-web';
+import {Math as VRMath, ReactInstance, Surface, Location} from 'react-360-web';
 import SimpleRaycaster from 'simple-raycaster';
 
 function init(bundle, parent, options = {}) {
@@ -31,13 +31,18 @@ function init(bundle, parent, options = {}) {
 
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
-    r360.createRoot('synergize', { /* initial props */ }),
+    r360.createRoot('synergize'),
     r360.getDefaultSurface()
   );
 
   r360.renderToSurface(
     r360.createRoot('crosshair'),
     crosshair
+  );
+
+  r360.renderToLocation(
+    r360.createRoot('barista'),
+    r360.getDefaultLocation()
   );
 
   // Load the initial environment
