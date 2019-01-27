@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "react": "^16.8.0-alpha.1",
+    "react-360-gaze-button": "^1.0.0",
     "react-dom": "^16.8.0-alpha.1",
     "react-landing-page": "^2.0.2"
   }
