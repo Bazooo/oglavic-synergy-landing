@@ -9,10 +9,19 @@ function init(bundle, parent, options = {}) {
 
   const cameraDirection = [0, 0, -1];
 
+  const kettleSurface = new Surface(
+    1000, 600, Surface.SurfaceShape.Flat
+  );
+
+  kettleSurface.setAngle(
+    7 * Math.PI / 32,
+    2 * Math.PI / 16,
+  );
+
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
-    cursorVisibility: "auto",
+    cursorVisibility: "visible",
     frame: () => {
       const cameraQuat = r360.getCameraQuaternion();
       cameraDirection[0] = 0;
@@ -36,13 +45,18 @@ function init(bundle, parent, options = {}) {
   );
 
   r360.renderToSurface(
+    r360.createRoot('kettle'),
+    kettleSurface
+  );
+
+  r360.renderToSurface(
     r360.createRoot('crosshair'),
     crosshair
   );
 
   r360.renderToLocation(
     r360.createRoot('barista'),
-    r360.getDefaultLocation()
+    new Location([100, 0, -20])
   );
 
   // Load the initial environment

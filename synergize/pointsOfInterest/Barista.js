@@ -7,30 +7,27 @@ export default class Barista extends React.Component {
     gazed: false
   };
 
-  setGazed = () => {
+  openDialog = () => {
+    console.log('open');
     this.setState({ gazed: true });
   };
+
+  closeDialog = () => {
+    console.log('close');
+    this.setState({ gazed: false });
+  }
 
   render() {
     const { gazed } = this.state;
 
     return (
-      <View style={styles.location}>
-        <GazeButton
-          duration={250}
-          onClick={this.setGazed}
-          render={(remainingTime, isGazed) => (
-            <View style={styles.greetingBox}>
-              <Text style={styles.greeting}>
-                {gazed
-                  ? "Paper towels"
-                  : isGazed
-                    ? remainingTime
-                    : "Essuie-tout"}
-              </Text>
-            </View>
-          )}
-        />
+      <View style={styles.location} onEnter={() => {this.openDialog()}} onExit={() => {this.closeDialog()}}>
+        {!gazed ?
+          <View style={styles.point}></View> :
+          <View style={styles.dialogBox}>
+            <Text style={styles.dialogText}>Barista</Text>
+          </View>
+        }
       </View>
     );
   }
@@ -38,18 +35,20 @@ export default class Barista extends React.Component {
 
 const styles = StyleSheet.create({
   location: {
-    height: 20,
     transform: [{
-      // translate: [20, 10, -1],
       rotateY: -90
     }]
   },
-  greetingBox: {
+  point: {
+    width: 10,
+    height: 10,
     backgroundColor: '#ecf0f1',
     borderRadius: 15,
-    padding: 5
   },
-  greeting: {
+  dialogBox: {
+    backgroundColor: '#ecf0f1',
+  },
+  dialogText: {
     color: '#333333',
     fontSize: 15,
   },
